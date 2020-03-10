@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Filter篇</title>
+</head>
+<body>
+<div class="panel panel-primary" id="d1">
+    <div class="panel-heading text-center">
+        这是一个测试页面
+    </div>
+    <p>大写字母转换成小写：{{ name|lower }}|</p>
+    <p>显示前3个字符：{{ sss|truncatewords:3 }}|</p>
+    <p>列表输出格式：{{ list|join:'*'}}</p>
+    <p>默认值：{{ str1|default:"你是猪" }}</p>
+    <p>字符串长度：{{ str2|length }}</p>
+    <p>文件大小：{{ str2|filesizeformat }}</p>
+    <p>切片操作：{{ str3|slice:"0:3" }}</p>
+    <p>格式化日期：{{ str4|date:"Y-m-d H:i:s" }}</p>
+    <p>当前时间：{{ now|date:"Y-m-d H:i:s" }}</p>
+    <hr>
+    <p>{{ str5|safe}}</p>
+    <p>{{ str3|truncatechars:9}}</p>
+    <p>{{ str2|truncatewords:3}}</p>
+    <p>cut的用法：{{ str3|cut:' ' }}</p>
+    <p>join的用法：{{ str2|join:'-' }}</p>
+    <p>a标签的使用：{{ a_html|safe }}</p>
+    <hr>
+    <h1>自定义filter的使用方法</h1>
+    {% load myfilter %}
+    <p>{{ name|add_sb }}</p>
+    <p>{{ sss|cut:'0' }}</p>
+</div>
+
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
